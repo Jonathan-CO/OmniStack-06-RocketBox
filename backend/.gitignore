@@ -1,3 +1,5 @@
 InforOmniStack06.txt
 node_modules
 src/config.js
+tmp/!
+!tmp/.gitkeep
