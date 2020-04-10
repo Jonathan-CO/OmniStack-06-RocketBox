@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import './style.css';
 import api from '../../services/api';
 import { formatDistance } from 'date-fns';
 import { utcToZonedTime } from 'date-fns-tz';
 import pt from 'date-fns/locale/pt';
-import { MdInsertDriveFile } from 'react-icons/md';
 import Dropzone from 'react-dropzone';
+import socket from 'socket.io-client';
+
+import { MdInsertDriveFile } from 'react-icons/md';
 
 import logo from '../../assets/logo.svg'
+import './style.css';
 
 export default function Box({ match }) {
     const [box, setBox] = useState({});
@@ -17,18 +19,35 @@ export default function Box({ match }) {
             const boxId = match.params.id
             const response = await api.get(`/boxes/${boxId}`);
             setBox(response.data);
+            // console.log("setBox")
         }
-        getBox();
-    }, [match.params.id]);
 
-    function handleUpload (files){
-        files.forEach(file=>{
+        getBox();
+
+    }, [box, match.params.id]);
+
+    useEffect(() => {
+        const box_id = match.params.id;
+        const io = socket('http://localhost:3333');
+        io.emit('connectRoom', box_id);
+        io.on('file', data => { 
+            if(box.files){ 
+                setBox({ ...box, files:[data, ...box.files] }) 
+            }   
+        })
+    }, [match.params.id])// eslint-disable-line
+
+
+    function handleUpload(files) {
+        files.forEach(file => {
             const data = new FormData();
-            const box = match.params.id;
+            const box_id = match.params.id;
             data.append('file', file);
-            api.post(`boxes/${box}/files`, data)
+            api.post(`boxes/${box_id}/files`, data)
         })
     }
+
+
     return (
         <div id="box-container">
             <header>
@@ -37,8 +56,8 @@ export default function Box({ match }) {
             </header>
 
             <Dropzone onDropAccepted={handleUpload}>
-                {({getRootProps, getInputProps})=>(
-                    <div className="upload" { ...getRootProps()}>
+                {({ getRootProps, getInputProps }) => (
+                    <div className="upload" {...getRootProps()}>
                         <input {...getInputProps()} />
                         <p>Arraste arquivos ou clique aqui</p>
                     </div>
@@ -61,10 +80,10 @@ export default function Box({ match }) {
                         <span>
                             há{" "}
                             {formatDistance(
-                                utcToZonedTime(file.createdAt, 'America/Sao_Paulo'), 
+                                utcToZonedTime(file.createdAt, 'America/Sao_Paulo'),
                                 new Date(), {
-                                    locale: pt
-                             })
+                                locale: pt
+                            })
                             }
                         </span>
                     </li>
