@@ -1,9 +1,14 @@
 import React from 'react';
 
-import {View} from 'react-native';
+import { View, Text } from 'react-native';
 
-export default function Main(){
+export default function Main() {
     return (
-        <View />
+        <View style={{ backgroundColor: "red" }}>
+            <Text>Hello OmnisTack 06</Text>
+            <Text>Hello OmnisTack 06</Text>
+            <Text>Hello OmnisTack 06</Text>
+            <Text>Hello OmnisTack 06</Text>
+        </View>
     )
 }
