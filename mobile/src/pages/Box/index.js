@@ -6,7 +6,7 @@ import api from '../../services/api';
 
 import ImagePicker from 'react-native-image-picker';
 
-import Icon from 'react-native-vector-icons/MaterialIcons';
+// import Icon from 'react-native-vector-icons/MaterialIcons';
 import styles from './style';
 
 import { formatDistance } from 'date-fns';
@@ -87,7 +87,7 @@ export default function Box() {
 
             <TouchableOpacity style={styles.fab}
             onPress={handleUpload}>
-                <Icon name="cloud-ipload" size={24} color="#FFF"
+                {/* <Icon name="cloud-ipload" size={24} color="#FFF" /> */}
             </TouchableOpacity>
         </View>
     )
