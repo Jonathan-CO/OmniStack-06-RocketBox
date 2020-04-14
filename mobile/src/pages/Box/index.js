@@ -27,7 +27,7 @@ export default function Box() {
 
         getBox();
 
-    }, [box, match.params.id]);
+    }, [box]);
 
     function renderItem({ item }) {
         <TouchableOpacity
