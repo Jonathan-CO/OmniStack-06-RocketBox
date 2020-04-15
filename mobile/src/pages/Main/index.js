@@ -13,9 +13,11 @@ export default function Main({ navigation }) {
         async function getBox() {
             const box = await AsyncStorage.getItem('@RocketBox:box')
             if (box) {
+                // await AsyncStorage.clear();
                 navigation.navigate('Box')
             }
         }
+        getBox();
     }, [])
 
     async function handleSignIn(e) {
@@ -24,6 +26,7 @@ export default function Main({ navigation }) {
             title: newBox
         })
         await AsyncStorage.setItem('@RocketBox:box', response.data._id)
+        alert(response.data._id)
         navigation.navigate('Box')
         // console.log(response.data);
     }

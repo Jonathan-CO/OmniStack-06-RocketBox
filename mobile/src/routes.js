@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Main from './pages/Main';
 import Box from './pages/Box';
-import { AsyncStorage, TouchableOpacity, Image, Text } from 'react-native';
 // import Add_Circle from './assets/add_circle.png'
 
 const Stack = createStackNavigator();
