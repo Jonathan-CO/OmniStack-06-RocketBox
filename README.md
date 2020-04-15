@@ -26,5 +26,8 @@ Some of these are:
 
 - React-Native-FileViewer: The function is not compatible with version 0.62.2 of react native.
 
+However, the backend and web frontend have been completely development.
 
-However, the backend and web frontend have been completely development
+Any contributions are welcome to increase the quality of the project and to solve the problems faced.
+
+
