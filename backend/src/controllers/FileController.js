@@ -15,7 +15,6 @@ module.exports = {
         await box.save();
 
         req.io.sockets.in(box._id).emit('file', file);
-        console.log("success")
         return res.json(file);
     }
 }

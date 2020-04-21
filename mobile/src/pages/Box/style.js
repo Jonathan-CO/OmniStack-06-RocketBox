@@ -1,18 +1,15 @@
-import { StyleSheet, Platform } from 'react-native';
-import {
-  getBottomSpace,
-  getStatusBarHeight
-} from 'react-native-iphone-x-helper';
+import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     paddingHorizontal: 20,
-    paddingTop: Platform.OS === 'ios' ? getStatusBarHeight() : 0,
-    flex: 1
   },
 
   boxTitle: {
-    marginTop: 50,
+    // position: 'absolute',
+    width:'100%',
+    marginTop: 25,
     textAlign: 'center',
     fontSize: 24,
     fontWeight: 'bold',
@@ -20,15 +17,27 @@ const styles = StyleSheet.create({
   },
 
   list: {
-    marginTop: 30
+    // height: '80%',
+    marginTop: 60,
+    // backgroundColor:'red'
   },
 
   file: {
     flexDirection: 'column',
-    alignItems: 'flex-start',
-    justifyContent: 'center',
-    paddingVertical: 20
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingVertical: 20,
   },
+
+
+  // file: {
+  //   flexDirection: 'column',
+  //   alignItems: 'flex-start',
+  //   justifyContent: 'center',
+  //   paddingVertical: 20,
+  // },
+
+
 
   separator: {
     height: 1,
@@ -37,21 +46,14 @@ const styles = StyleSheet.create({
 
   fileInfo: {
     flexDirection: 'row',
-    alignItems: 'baseline'
+    // alignItems: 'baseline'
+    alignItems: 'center'
   },
 
   fileTitle: {
     fontSize: 16,
     color: '#333',
     marginLeft: 10
-  },
-
-  fileDateContainer: {
-    flexDirection: 'column',
-    justifyContent: 'flex-start',
-    alignItems: 'flex-end',
-    paddingTop: 5,
-    paddingHorizontal: 5
   },
 
   fileDate: {
@@ -61,8 +63,8 @@ const styles = StyleSheet.create({
 
   fab: {
     position: 'absolute',
-    right: 30,
-    bottom: 30 + getBottomSpace(),
+    right: 20,
+    bottom: 30,
     width: 60,
     height: 60,
     backgroundColor: '#7159c1',

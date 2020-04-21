@@ -26,9 +26,7 @@ export default function Main({ navigation }) {
             title: newBox
         })
         await AsyncStorage.setItem('@RocketBox:box', response.data._id)
-        alert(response.data._id)
         navigation.navigate('Box')
-        // console.log(response.data);
     }
     return (
 

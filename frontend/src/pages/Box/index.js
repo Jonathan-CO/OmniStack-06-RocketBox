@@ -19,7 +19,6 @@ export default function Box({ match }) {
             const boxId = match.params.id
             const response = await api.get(`/boxes/${boxId}`);
             setBox(response.data);
-            // console.log("setBox")
         }
 
         getBox();
