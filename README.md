@@ -21,7 +21,7 @@ In this application you can upload files from the browser and the mobile app. In
 
 ## Notes
 
-Week 7 was developed with previous versions of many tools used. Thus, this project presents differences in relation to the original project, as to the development mode, maintaining the essence of the original project's functionalities. 
+Week 6 was developed with previous versions of many tools used. Thus, this project presents differences in relation to the original project, as to the development mode, maintaining the essence of the original project's functionalities. 
 
 ### Main Differences
 
