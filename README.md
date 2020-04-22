@@ -15,19 +15,24 @@ This app features all the latest tools and practices in mobile development!
 - ♻️ **Socket IO** — A library for realtime web applications 
 
 
-This application was not completed, because there are some incompatibilities between the used libraries and the version of react-native (0.62.2).
-Some of these are:
+### Services
 
-- Axios: It was not possible to post images, data is not sent, generating the Network Server error. This error, according to research on the internet, as in github issues, informs that the current version is really with this problem. Thus, as soon as a solution is found, the project will continue. It is noteworthy that it was also not possible to carry out the post with fetch, indicating possible other flaws and / or incompatibilities in the axes and / or in the multer, or even in the code itself developed.
+In this application you can upload files from the browser and the mobile app. In addition, you can still open these files on both devices.
 
-- Date-fns: The distanceInWords function is no longer part of the lib. Despite this, another function was used to achieve the objective.
+## Notes
 
-- React-Native-fs: The function is not compatible with version 0.62.2 of react native.
+Week 7 was developed with previous versions of many tools used. Thus, this project presents differences in relation to the original project, as to the development mode, maintaining the essence of the original project's functionalities. 
 
-- React-Native-FileViewer: The function is not compatible with version 0.62.2 of react native.
+### Main Differences
 
-However, the backend and web frontend have been completely development.
+Change from using class to using Hooks <br />
 
-Any contributions are welcome to increase the quality of the project and to solve the problems faced.
+Change of route structure in the Mobile App, using React Navigation 5<br />
+
+Image upload made with RNFetchBlob<br />
+
+The distanceInWords function is no longer part of the lib. Despite this, the function "FormatDistance" was used to achieve the objective.
+
+
 
 
